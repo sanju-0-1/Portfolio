@@ -236,88 +236,100 @@
         }
         #project{
             padding: 30px 0
+            margin-top: 30px;
         }
         
-        .projects-container {
+        .portfolio {
+            background-color: #f8f9fa;
+        }
+
+        .portfolio h2 {
+            margin-bottom: 4rem;
+        }
+
+        .portfolio-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
-        #projects .section-title h2 {
-             color: #ff5722; 
-            }
-        
-        .project-card {
-            padding: 10px;
-            background: white;
-            border-radius: 10px;
-            width: auto;
+
+        .portfolio-box {
+            position: relative;
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-            transform: scale(0.95);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-        .btn-project{
-        margin: auto;
-        padding: 10px 30px;
-        text-decoration: none;
-        height: 45px;
-        color: rgb(255, 255, 255);
-        border-color: white;
-        background: linear-gradient(to right, #938be3, #200356);
-        border-radius: 49px;
-        text-align: center;
-        }
-        .btn-project:hover{
-            background: linear-gradient(to right, #200356, #938be3);
-        }
-        .project-img { 
-            height: 100px;  
-            background: linear-gradient(135deg, #4a6cf7 0%, #6f42c1 100%); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: white; 
-            font-size: 28px;
-            text-align: center; 
-        }
-        .project-img i {
-            z-index: 1;
-        }
-        .project-content {
-            padding: 12px;
-        }
-        
-        .project-content h3 {
-            margin-bottom: 10px;
-        }
-
-        .project-tags {
-            margin-top: 12px;
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .project-content p {
-            font-size: 14px;
-            line-height: 1.4;
+            height: 250px;
         }
 
-        .project-tag {
-            display: inline-block;
-            background: #010c74;
-            color: #fff;
-            font-size: 0.8rem;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(111,66,193,0.08);
-            transition: background 0.2s, color 0.2s;
+        .portfolio-box img {
+            width: 100%;
+            transition: .5s ease;
+            opacity: 0.7;
+            object-fit: cover;
+        }
+
+        .portfolio-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-layer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.1), #01135b);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 4rem;
+            transform: translateY(100%);
+            transition: .5s ease;
+        }
+
+        .portfolio-box:hover .portfolio-layer {
+            transform: translateY(0);
+        }
+
+        .portfolio-layer h4 {
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-layer p {
+            font-size: 1rem;
+            color: #ddd;
+            margin: .3rem 0 1rem;
+        }
+
+        .project-icon {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .project-icon a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-icon a:hover {
+            transform: scale(1.2);
+            background: rgba(255, 255, 255, 0.4);
         }
         
         .contact-content {
@@ -688,56 +700,100 @@ section {
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section id="projects" class="portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>My Projects</h2>
+                <h2>Projects</h2>
             </div>
-            <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p>A responsive portfolio website built with HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-                        <div class="project-tags">
-                          <span class="project-tag">HTML</span>
-                          <span class="project-tag">CSS</span>
-                          <span class="project-tag">JavaScript</span>
-                          <a href="https://creative-belekoy-373db7.netlify.app/" target="_blank" class="btn-project">Explore</a>
-                      </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                      <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>E-commerce</h3>
-                        <p>A fully responsive e-commerce platform with product listings, shopping cart, user authentication, and payment integration.</p>
-                        <div class="project-tags">
-                          <span class="project-tag">HTML</span>
-                          <span class="project-tag">CSS</span>
-                          <span class="project-tag">JavaScript</span>
-                          <a href="https://stellar-chaja-fc1643.netlify.app" target="_blank" class="btn-project">Explore</a>
-                      </div>
+            <div class="portfolio-container">
+                <div class="portfolio-box">
+                    <img src="portfolio_4311725.png" alt="Moving Ball Project">
+                    <div class="portfolio-layer">
+                        <h4>Portfolio</h4>
+                        <p>Simple Portfolio</p>
+                        <div class="project-icon">
+                            <a href="https://sanju-0-1.github.io/Portfolio/" target="_blank" title="Project Link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="https://github.com/sanju-0-1/Portfolio.git" target="_blank" title="GitHub">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">
-                      <i class="fas fa-ad"></i>
+                <div class="portfolio-box">
+                    <img src="e-commerce_9516972.png" alt="Project 2">
+                    <div class="portfolio-layer">
+                        <h4>Ecommerce</h4>
+                        <p>Simple E-commerce website</p>
+                        <div class="project-icon">
+                            <a href="https://sanju-0-1.github.io/E-commerce/" target="_blank" title="Project Link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="https://github.com/sanju-0-1/E-commerce.git" target="_blank" title="GitHub">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="project-content">
-                        <h3>Advertisement Website</h3>
-                        <p>A platform for managing and displaying advertisements with user profiles, ad categories, and advanced filtering options.</p>
-                        <div class="project-tags">
-                          <span class="project-tag">HTML</span>
-                          <span class="project-tag">CSS</span>
-                          <span class="project-tag">PHP</span>
-                          <span class="project-tag">MySQL</span>
-                          <a href="jdip" target="_blank" class="btn-project">Explore</a>
-                      </div>
+                </div>
+                <div class="portfolio-box">
+                    <img src="billboard_16117825.png" alt="Project 3">
+                    <div class="portfolio-layer">
+                        <h4>Advertisement website</h4>
+                        <p>Simple Advertisement website</p>
+                        <div class="project-icon">
+                            <a href="https://github.com/" target="_blank" title="Project Link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="https://github.com/" target="_blank" title="GitHub">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-box">
+                    <img src="calculator_346427.png" alt="Project 4">
+                    <div class="portfolio-layer">
+                        <h4>Calculator</h4>
+                        <p>Simple Calculator</p>
+                        <div class="project-icon">
+                            <a href=" https://sanju-0-1.github.io/calculator/" target="_blank" title="Project Link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="https://github.com/sanju-0-1/calculator.git" target="_blank" title="GitHub">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-box">
+                    <img src="address_5741170.png" alt="Project 3">
+                    <div class="portfolio-layer">
+                        <h4>Map</h4>
+                        <p>Simple Map</p>
+                        <div class="project-icon">
+                            <a href="https://github.com/" target="_blank" title="Project Link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="https://github.com/" target="_blank" title="GitHub">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-box">
+                    <img src="game_13929020.png" alt="Project 3">
+                    <div class="portfolio-layer">
+                        <h4>Advertisement website</h4>
+                        <p>Simple Advertisement website</p>
+                        <div class="project-icon">
+                            <a href="https://github.com/" target="_blank" title="Project Link">
+                                <i class="fas fa-link"></i>
+                            </a>
+                            <a href="https://github.com/" target="_blank" title="GitHub">
+                                <i class="fas fa-code"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
